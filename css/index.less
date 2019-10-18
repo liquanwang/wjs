@@ -1,6 +1,38 @@
 /*定义变量*/
 @baseColor :#e92322;
 /*头部样式*/
+a,a:visited,a:hover,a:focus {
+  border: none;
+  text-decoration: none;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+  /*注册模态*/
+#myLogon {
+  .modal-dialog {
+    .modal-header  {
+      background-color: @baseColor;
+      color: #fff;
+    }
+  }
+}
+/*登录模态*/
+#myLogin {
+  .modal-dialog {
+    .modal-header  {
+      background-color: @baseColor;
+      color: #fff;
+    }
+  }
+}
 .wjs_header {
   line-height: 50px;
   border-bottom: 1px solid #ccc;
@@ -43,6 +75,18 @@
       }
     }
   }
+  .call {
+    >a {
+      >span {
+        &:hover {
+          color: #5b6abf;
+        }
+      }
+      &:visited,&:focus {
+        text-decoration: none;
+      }
+    }
+  }
 }
 /*导航条样式*/
 .wjs_nav {
@@ -78,12 +122,27 @@
       }
     }
   }
+  .navbar-right {
+    border: none;
+    > li {
+      border: none;
+      &:hover {
+        border-bottom: 0;
+        background-color: transparent;
+      }
+      button {
+        margin-top: 10px;
+        padding: 5px;
+        border: none;
+        border-radius: 8px;
+      }
+    }
+  }
 }
 .navbar-fixed-top {
   margin-top: 50px;
 }
 /*轮播图*/
-
 .mobileImg{
   width: 100%;
   display: block;
@@ -101,14 +160,31 @@
 }
 /*信息块*/
 .wjs_info {
+  margin-top: 10px;
+  margin-bottom: 10px;
   .wjs_icon {
     font-size: 30px;
   }
   .row {
     div {
-      margin-top: 20px;
+      margin-top: 10px;
       >a:hover {
         color: @baseColor;
+      }
+    }
+    .media {
+      text-align: center;
+      position: relative;
+      .media-left {
+        text-align: center;
+        position: absolute;
+        left:80px;
+        top:0;
+      }
+      @media screen and (min-width: 992px)and (max-width: 1200px){
+        .media-left{
+          left: 120px;
+        }
       }
     }
   }
@@ -136,4 +212,265 @@
     padding-left: 0;
     padding-right: 0;
   }
+}
+/*产品块*/
+.wjs_product {
+  background-color: #eee;
+  padding: 20px;
+  .nav-tabs {
+    >li {
+      margin-bottom: 0;
+      margin-left: 15px;
+      >a {
+        box-sizing: border-box;
+        line-height: 50px;
+        border-radius: 0;
+        border: none;
+        background-color: transparent;
+
+      }
+      &:hover {
+        border-bottom: 2px solid @baseColor;
+      }
+      &.active {
+        border-bottom: 2px solid @baseColor;
+        >a{
+
+          &:hover,&:focus{
+            border: none;
+            background-color: #eee;
+            border-radius: 0;
+
+          }
+        }
+      }
+    }
+  }
+  /*详细产品块*/
+.wjs_box {
+  background-color: white;
+  position: relative;
+  margin: 15px 5px;
+  .box_left {
+    padding-top: 10px;
+  >p {
+    text-align: center;
+    font-size: 18px;
+  }
+    .row {
+      >div {
+        padding: 0 25px 0 25px;
+        &:nth-of-type(even) {
+          text-align: right;
+        }
+      }
+    }
+  }
+  .box_left {
+    margin-right: 100px;
+  }
+  .box_right {
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-left: 1px dashed #ddd;
+    padding-top: 40px;
+    text-align: center;
+    >strong {
+      font-size: 40px;
+      color: @baseColor;
+    }
+    >sub {
+      bottom: 0;
+      color: @baseColor;
+    }
+    &::before, &::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #eee;
+      position: absolute;
+      left: -5px;
+      z-index: 100;
+    }
+    &::before {
+      top: -5px;
+      box-shadow: 0 -1px 1px #ddd inset;
+    }
+    &::after {
+      bottom: -5px;
+      box-shadow: 0 1px 1px #ddd inset;
+    }
+    .bao_bei {
+      width: 100%;
+      position: absolute;
+      top:25px;
+      font-size: 16px;
+
+      >span:first-of-type {
+        display: inline-block;
+        color: @baseColor;
+        border: 1px solid @baseColor;
+        padding: 0 5px 0 5px;
+      }
+      >span:last-of-type {
+        display: inline-block;
+        color: blue;
+        border: 1px solid blue;
+        padding: 0 5px 0 5px;
+      }
+      span:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+.active {
+.sign {
+  .wjs_box {
+    background-color: @baseColor;
+    .box_left {
+      color: #fff;
+      position: relative;
+    &::before {
+      content: '\e915';
+      font-family: 'wjs';
+      font-size: 40px;
+      position: absolute;
+      top: -10px;
+      left: 0;
+    }
+    }
+    .box_right {
+     >strong,sub,p {
+       color: #fff;
+     }
+    }
+  }
+}
+}
+  .tabs_parent {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+/*新闻块*/
+.wjs_news {
+  padding: 20px;
+  .news_tit {
+    position: relative;
+    text-align: center;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 26px;
+    border-bottom: 2px solid #eee;
+    &::before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      display: block;
+      right: -15px;
+      bottom: -8px;
+      border: 3px solid #eee;
+      border-radius: 50%;
+    }
+  }
+  .nav-tabs {
+    border: none;
+    >li {
+      margin-bottom: 50px;
+      > a {
+        background-color: #ccc;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        &:hover {
+          background-color: @baseColor;
+          border-radius: 50%;
+          border: none;
+        }
+      }
+      span {
+        display: block;
+        font-size: 30px;
+        text-align: center;
+        color: #fff;
+      }
+      &.active{
+        a,a:hover,a:focus {
+          border: none;
+          background-color: @baseColor;
+        }
+      }
+      &:nth-last-of-type(1) {
+        margin-bottom: 0;
+      }
+    }
+    @media screen and (min-width: 768px) and (max-width: 992px){
+    li {
+      padding: 20px;
+    }
+    }
+    @media screen and (max-width: 768px){
+      li {
+        width: 25%;
+      }
+    }
+  }
+  .news_line {
+    width: 1px;
+    height: 100%;
+    border-left:1px dashed @baseColor;
+    position: absolute;
+    left: 45px;
+    top: 0;
+  }
+  .wjs_newslist {
+    >li {
+      display: block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      list-style: none;
+      height: 60px;
+      line-height: 60px;
+      >a{
+        &:hover {
+          background-color: #ccc;
+        }
+      }
+    }
+  }
+}
+/*footer*/
+.wjs_partner {
+  background-color: #eee;
+  .foot_partner {
+    list-style: none;
+    text-align: center;
+    >li {
+      display: inline-block;
+      padding-left: 20px;
+      padding-right: 20px;
+      >a {
+        font-size: 60px;
+      }
+    }
+  }
+  .footer_text {
+    text-align: center;
+    margin-top: 20px;
+    p {
+      font-size: 14px;
+      color: #333333;
+      line-height: 25px;
+    }
+  }
+
 }

@@ -2,6 +2,8 @@
  * Created by l on 2019/10/17.
  */
 $(function() {
+    /*初始化工具提示插件*/
+    $('[data-toggle="tooltip"]').tooltip()
     var items=$(".carousel-inner .item");
     /*获取屏幕的大小改变*/
     $(window).on("resize",function(){
@@ -44,8 +46,22 @@ $(function() {
         }
     });
     carousel.carousel({
-        interval: 2000
+        interval: 4000
     });
+/*计算产品块导航项的宽度*/
+  var ul = $('.wjs_product .nav-tabs');
+    var lis = ul.find('li');
+    var ulWidth =0;
+    lis.each(function(index,value) {
+ulWidth = ulWidth + $(value).outerWidth(true);
+    });
+    ul.width(ulWidth);
+    /*使用插件实现导航条的滑动操作*/
+    var myScroll = new IScroll('.tabs_parent',{
+        /*设置水平滑动，不允许垂直滑动*/
+        scrollX: true, scrollY: false
+    });
+   /* 模态框*/
 
 });
 
