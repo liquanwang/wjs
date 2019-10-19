@@ -27,6 +27,42 @@ a:focus {
   background-color: #e92322;
   color: #fff;
 }
+/*回到顶部*/
+.come_top {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  background-color: rgba(225, 0, 0, 0.2);
+  padding: 5px 10px;
+  border-radius: 10px 10px 5px 5px;
+  z-index: 1000;
+  display: none;
+}
+.come_top:hover {
+  cursor: pointer;
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .come_top {
+    font-size: 16px;
+    padding: 3px 6px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .come_top {
+    font-size: 16px;
+    padding: 1px 4px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .come_top {
+    font-size: 14px;
+    padding: 1px 2px;
+    right: 10px;
+  }
+}
 .wjs_header {
   line-height: 50px;
   border-bottom: 1px solid #ccc;
@@ -116,6 +152,18 @@ a:focus {
   padding: 5px;
   border: none;
   border-radius: 8px;
+  outline: none;
+  background-color: transparent;
+}
+.wjs_nav .navbar-right > li .dropdown-menu {
+  margin-top: 12px;
+  border-top: 0;
+  min-width: 0;
+  right: -12px;
+}
+.wjs_nav .navbar-right > li .dropdown-menu > li {
+  width: 100px;
+  text-align: left;
 }
 .navbar-fixed-top {
   margin-top: 50px;
